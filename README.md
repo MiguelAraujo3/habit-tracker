@@ -21,5 +21,3 @@ Atualmente, a interface contempla as seguintes funcionalidades e fluxos:
 * **Perfil do Usuário (Minha Conta):** Painel com informações do usuário, gestão de conta e um panorama geral das sequências de dias consecutivos (gamificação).
 * **Navegação SPA Simulada:** Estrutura de navegação limpa através de menus estáticos com feedback visual de página ativa.
 
-## Estratégia e Hipóteses Técnicas para Obtenção de Dados Reais
-O projeto encontra-se atualmente com o frontend estruturado em HTML e Tailwind CSS. Para a próxima fase, onde a aplicação consumirá e gerará **dados reais**, propõe-se a seguinte arquitetura técnica:
