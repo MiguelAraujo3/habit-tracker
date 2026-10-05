@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Conta</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    /* Pantone 534 C - Azul escuro (Texto ativo, Botão, Data) */
+                    'brand-dark': '#1F3C5D', 
+                    
+                    /* Pantone 3597 C - Azul médio (Alternativa para botões hover) */
+                    'brand-blue': '#2A437C', 
+                    
+                    /* Pantone 4135 C - Cinza azulado (Fundo do menu superior) */
+                    'brand-gray': '#808C9E', 
+                    
+                    /* Pantone Cool Gray 7 C - Cinza neutro (Caixa central de hábitos) */
+                    'brand-light-gray': '#9EA1A2', 
+                    
+                    /* Pantone 538 C - Cinza/Azul gelo (Fundo da página) */
+                    'brand-ice': '#CED6DE' 
+                }
+            }
+        }
+    }
+</script>
+</head>
+<body class="bg-brand-ice min-h-screen font-sans text-gray-800">
+    <header class="bg-brand-gray text-white flex justify-between items-center px-8 py-6 shadow-md">
+        <div class="text-xl font-bold tracking-widest">LOGO</div>
+        <nav class="flex gap-8 text-sm font-medium">
+            <a href="habitos.html" class="hover:text-brand-ice transition-colors">Hábitos</a>
+            <a href="todo.html" class="hover:text-brand-ice transition-colors">ToDo</a>
+            <a href="categorias.html" class="hover:text-brand-ice transition-colors">Categorias</a>
+            <a href="conta.html" class="text-brand-dark font-bold">Minha Conta</a>
+        </nav>
+    </header>
+
+    <main class="max-w-4xl mx-auto mt-10 p-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Perfil -->
+        <div class="md:col-span-1 bg-white p-6 rounded shadow flex flex-col items-center">
+            <div class="w-24 h-24 bg-brand-light-gray rounded-full mb-4 flex items-center justify-center text-white text-3xl font-bold">U</div>
+            <h2 class="text-xl font-bold text-brand-dark">Seu Nome</h2>
+            <p class="text-sm text-gray-500 mb-6">usuario@email.com</p>
+            
+            <button class="w-full bg-brand-gray text-white py-2 rounded mb-3 hover:bg-opacity-80 transition-opacity cursor-pointer">Alterar Senha</button>
+            <button class="w-full border border-red-500 text-red-500 py-2 rounded hover:bg-red-50 transition-colors cursor-pointer">Sair da Conta</button>
+        </div>
+
+        <!-- Estatísticas -->
+        <div class="md:col-span-2">
+            <h3 class="text-2xl font-bold text-brand-dark mb-4">Sequência de Dias (Streak)</h3>
+            <div class="grid grid-cols-2 gap-4">
+                <div class="bg-brand-dark text-white p-6 rounded shadow flex flex-col items-center justify-center">
+                    <span class="text-3xl font-bold">12 Dias</span>
+                    <span class="text-sm mt-2 opacity-80">Hidratação</span>
+                </div>
+                <div class="bg-brand-dark text-white p-6 rounded shadow flex flex-col items-center justify-center">
+                    <span class="text-3xl font-bold">5 Dias</span>
+                    <span class="text-sm mt-2 opacity-80">Exercício Físico</span>
+                </div>
+                <div class="bg-brand-dark text-white p-6 rounded shadow flex flex-col items-center justify-center">
+                    <span class="text-3xl font-bold">3 Dias</span>
+                    <span class="text-sm mt-2 opacity-80">Estudos</span>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

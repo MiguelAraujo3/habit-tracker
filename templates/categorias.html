@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categorias</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    /* Pantone 534 C - Azul escuro (Texto ativo, Botão, Data) */
+                    'brand-dark': '#1F3C5D', 
+                    
+                    /* Pantone 3597 C - Azul médio (Alternativa para botões hover) */
+                    'brand-blue': '#2A437C', 
+                    
+                    /* Pantone 4135 C - Cinza azulado (Fundo do menu superior) */
+                    'brand-gray': '#808C9E', 
+                    
+                    /* Pantone Cool Gray 7 C - Cinza neutro (Caixa central de hábitos) */
+                    'brand-light-gray': '#9EA1A2', 
+                    
+                    /* Pantone 538 C - Cinza/Azul gelo (Fundo da página) */
+                    'brand-ice': '#CED6DE' 
+                }
+            }
+        }
+    }
+</script>
+</head>
+<body class="bg-brand-ice min-h-screen font-sans text-gray-800">
+    <header class="bg-brand-gray text-white flex justify-between items-center px-8 py-6 shadow-md">
+        <div class="text-xl font-bold tracking-widest">LOGO</div>
+        <nav class="flex gap-8 text-sm font-medium">
+            <a href="habitos.html" class="hover:text-brand-ice transition-colors">Hábitos</a>
+            <a href="todo.html" class="hover:text-brand-ice transition-colors">ToDo</a>
+            <a href="categorias.html" class="text-brand-dark font-bold">Categorias</a>
+            <a href="conta.html" class="hover:text-brand-ice transition-colors">Minha Conta</a>
+        </nav>
+    </header>
+
+    <main class="max-w-3xl mx-auto mt-10 p-6">
+        <div class="flex justify-between items-center mb-8">
+            <h1 class="text-2xl font-bold text-brand-dark">Suas Categorias</h1>
+            <button class="bg-brand-dark text-white px-4 py-2 rounded shadow hover:bg-opacity-90 transition">
+                + Nova Categoria
+            </button>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+            <div class="bg-white p-4 rounded shadow text-center border-l-4 border-brand-dark hover:-translate-y-1 transition-transform cursor-pointer">
+                <h3 class="font-bold text-lg text-brand-dark">Hidratação</h3>
+            </div>
+            <div class="bg-white p-4 rounded shadow text-center border-l-4 border-brand-dark hover:-translate-y-1 transition-transform cursor-pointer">
+                <h3 class="font-bold text-lg text-brand-dark">Exercício Físico</h3>
+            </div>
+            <div class="bg-white p-4 rounded shadow text-center border-l-4 border-brand-dark hover:-translate-y-1 transition-transform cursor-pointer">
+                <h3 class="font-bold text-lg text-brand-dark">Estudos</h3>
+            </div>
+            <div class="bg-white p-4 rounded shadow text-center border-l-4 border-brand-dark hover:-translate-y-1 transition-transform cursor-pointer">
+                <h3 class="font-bold text-lg text-brand-dark">Leitura</h3>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hábitos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    'brand-dark': '#1F3C5D', 
+                    'brand-blue': '#2A437C', 
+                    
+                    /* Novo tom: Mais azulado e vibrante que o anterior (#808C9E) */
+                    'brand-gray': '#6B89A8', 
+                    
+                    'brand-light-gray': '#9EA1A2', 
+                    'brand-ice': '#CED6DE' 
+                }
+            }
+        }
+    }
+</script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-brand-ice min-h-screen font-sans text-gray-800">
+    <!-- Cabeçalho -->
+    <header class="bg-brand-gray text-white flex justify-between items-center px-8 py-6 shadow-md">
+        <div class="text-xl font-bold tracking-widest">LOGO</div>
+        <nav class="flex gap-8 text-sm font-medium">
+            <a href="habitos.html" class="text-brand-dark font-bold">Hábitos</a>
+            <a href="todo.html" class="hover:text-brand-ice transition-colors">ToDo</a>
+            <a href="categorias.html" class="hover:text-brand-ice transition-colors">Categorias</a>
+            <a href="conta.html" class="hover:text-brand-ice transition-colors">Minha Conta</a>
+        </nav>
+    </header>
+
+    <main class="max-w-3xl mx-auto mt-10 p-6">
+        <div class="flex justify-between items-center mb-8 text-brand-dark">
+            <div class="text-lg font-semibold flex items-center gap-2">
+                04/10/2026 <i class="fa-regular fa-calendar"></i>
+            </div>
+            <button class="bg-brand-dark text-white px-4 py-2 rounded shadow hover:bg-opacity-90 transition">
+                + Adicionar Hábito
+            </button>
+        </div>
+        
+        <div class="bg-brand-light-gray/50 p-8 rounded-md text-center text-white shadow-sm mt-12 border-2 border-dashed border-white/70 backdrop-blur-sm">
+            <h2 class="text-2xl font-semibold mb-2 text-brand-dark">Cadastre as metas/ hábitos de hoje</h2>
+            <p class="text-sm text-brand-dark opacity-80">Você ainda não definiu seus hábitos principais para o dia de hoje. Use o botão acima para começar!</p>
+        </div>
+    </main>
+</body>
+</html>

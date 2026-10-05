@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    /* Pantone 534 C - Azul escuro (Texto ativo, Botão, Data) */
+                    'brand-dark': '#1F3C5D', 
+                    
+                    /* Pantone 3597 C - Azul médio (Alternativa para botões hover) */
+                    'brand-blue': '#2A437C', 
+                    
+                    /* Pantone 4135 C - Cinza azulado (Fundo do menu superior) */
+                    'brand-gray': '#808C9E', 
+                    
+                    /* Pantone Cool Gray 7 C - Cinza neutro (Caixa central de hábitos) */
+                    'brand-light-gray': '#9EA1A2', 
+                    
+                    /* Pantone 538 C - Cinza/Azul gelo (Fundo da página) */
+                    'brand-ice': '#CED6DE' 
+                }
+            }
+        }
+    }
+</script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* CSS Puro para marcar as tarefas */
+        .task-check:checked + label { background-color: #213A69; border-color: #213A69; }
+        .task-check:checked + label i { opacity: 1; }
+        .task-check:checked ~ .task-title { text-decoration: line-through; opacity: 0.7; }
+        
+        /* CSS Puro para o Accordion (Cards de Resumo) */
+        .acc-check:checked ~ .acc-content { max-height: 250px; }
+        .acc-check:checked ~ .acc-header .fa-chevron-down { transform: rotate(180deg); }
+    </style>
+</head>
+<body class="bg-brand-ice min-h-screen font-sans text-gray-800">
+    <!-- Cabeçalho / Menu -->
+    <header class="bg-brand-gray text-white flex justify-between items-center px-8 py-6 shadow-md">
+        <div class="text-xl font-bold tracking-widest">LOGO</div>
+        <nav class="flex gap-8 text-sm font-medium">
+            <a href="habitos.html" class="hover:text-brand-ice transition-colors">Hábitos</a>
+            <a href="todo.html" class="text-brand-dark font-bold">ToDo</a>
+            <a href="categorias.html" class="hover:text-brand-ice transition-colors">Categorias</a>
+            <a href="conta.html" class="hover:text-brand-ice transition-colors">Minha Conta</a>
+        </nav>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="max-w-3xl mx-auto mt-10 p-6">
+        <div class="flex justify-between items-center mb-8 text-brand-dark">
+            <div class="text-lg font-semibold flex items-center gap-2">
+                04/10/2026 <i class="fa-regular fa-calendar"></i>
+            </div>
+            <button class="bg-brand-dark text-white px-4 py-2 rounded shadow hover:bg-opacity-90 transition">
+                + Adicionar Hábito
+            </button>
+        </div>
+
+        <div class="space-y-4">
+            
+            <!-- Card 1 -->
+            <div class="bg-brand-light-gray rounded-md shadow-sm overflow-hidden relative">
+                <input type="checkbox" id="acc1" class="acc-check hidden" />
+                
+                <!-- Cabeçalho do Card -->
+                <div class="acc-header flex justify-between items-center p-4 relative">
+                    <!-- Label que serve como botão invisível para abrir o accordion -->
+                    <label for="acc1" class="absolute inset-0 cursor-pointer"></label>
+
+                    <!-- Checkbox da Tarefa (z-index maior para não conflitar com o accordion) -->
+                    <div class="flex items-center gap-3 relative z-10">
+                        <input type="checkbox" id="task1" class="task-check hidden" />
+                        <label for="task1" class="w-5 h-5 rounded-full border-2 border-brand-dark flex items-center justify-center cursor-pointer transition-colors">
+                            <i class="fa-solid fa-check text-white text-xs opacity-0 transition-opacity"></i>
+                        </label>
+                        <label for="task1" class="task-title font-semibold text-white cursor-pointer transition-all">Beber água</label>
+                    </div>
+
+                    <!-- Meta e Seta -->
+                    <div class="flex items-center gap-4 text-white pointer-events-none z-10">
+                        <span class="text-sm">Meta: 4 Litros</span>
+                        <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                    </div>
+                </div>
+
+                <!-- Resumo / Conteúdo (Accordion) -->
+                <div class="acc-content max-h-0 overflow-hidden transition-all duration-300 bg-white bg-opacity-50">
+                    <div class="p-4 text-sm text-brand-dark border-t border-brand-light-gray">
+                        <p><strong>Categoria:</strong> Hidratação</p>
+                        <p><strong>Sequência:</strong> 12 dias consecutivos 🔥</p>
+                        <p><strong>Horário:</strong> Ao longo do dia</p>
+                        <p><strong>Total de hoje:</strong> 4,5 Litros</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-brand-light-gray rounded-md shadow-sm overflow-hidden relative">
+                <input type="checkbox" id="acc2" class="acc-check hidden" />
+                
+                <div class="acc-header flex justify-between items-center p-4 relative">
+                    <label for="acc2" class="absolute inset-0 cursor-pointer"></label>
+                    <div class="flex items-center gap-3 relative z-10">
+                        <input type="checkbox" id="task2" class="task-check hidden" />
+                        <label for="task2" class="w-5 h-5 rounded-full border-2 border-brand-dark flex items-center justify-center cursor-pointer transition-colors">
+                            <i class="fa-solid fa-check text-white text-xs opacity-0 transition-opacity"></i>
+                        </label>
+                        <label for="task2" class="task-title font-semibold text-white cursor-pointer transition-all">Academia</label>
+                    </div>
+                    <div class="flex items-center gap-4 text-white pointer-events-none z-10">
+                        <span class="text-sm">Meta: 1 hora</span>
+                        <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                    </div>
+                </div>
+
+                <div class="acc-content max-h-0 overflow-hidden transition-all duration-300 bg-white bg-opacity-50">
+                    <div class="p-4 text-sm text-brand-dark border-t border-brand-light-gray">
+                        <p><strong>Categoria:</strong> Exercício Físico</p>
+                        <p><strong>Sequência:</strong> 5 dias consecutivos 🔥</p>
+                        <p><strong>Horário:</strong> 18:30</p>
+                        <p><strong>Total de hoje:</strong> 1 hora e 15 min</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-brand-light-gray rounded-md shadow-sm overflow-hidden relative">
+                <input type="checkbox" id="acc3" class="acc-check hidden" />
+                
+                <div class="acc-header flex justify-between items-center p-4 relative">
+                    <label for="acc3" class="absolute inset-0 cursor-pointer"></label>
+                    <div class="flex items-center gap-3 relative z-10">
+                        <input type="checkbox" id="task3" class="task-check hidden" />
+                        <label for="task3" class="w-5 h-5 rounded-full border-2 border-brand-dark flex items-center justify-center cursor-pointer transition-colors">
+                            <i class="fa-solid fa-check text-white text-xs opacity-0 transition-opacity"></i>
+                        </label>
+                        <label for="task3" class="task-title font-semibold text-white cursor-pointer transition-all">Estudar PW2</label>
+                    </div>
+                    <div class="flex items-center gap-4 text-white pointer-events-none z-10">
+                        <span class="text-sm">Meta: 3 horas</span>
+                        <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                    </div>
+                </div>
+
+                <div class="acc-content max-h-0 overflow-hidden transition-all duration-300 bg-white bg-opacity-50">
+                    <div class="p-4 text-sm text-brand-dark border-t border-brand-light-gray">
+                        <p><strong>Categoria:</strong> Estudos</p>
+                        <p><strong>Sequência:</strong> 3 dias consecutivos 🔥</p>
+                        <p><strong>Horário:</strong> 14:00</p>
+                        <p><strong>Total de hoje:</strong> Pendente</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+</body>
+</html>
